@@ -9,7 +9,7 @@ Following the implementation and hyper-parameter search, benchmarking will be do
 * ShuffleNet
 * SqueezeNet
 
-Disclaimer: The views expressed and/or work on this project done are of my own and do not necessarily 
+Disclaimer: The views expressed and/or work on this project done are of my own and do not necessarily
 represents any of my employeer, organisation, publishing committe or individual related to this research.
 
 ## Breif overview of architecture
@@ -20,7 +20,7 @@ Locality of convolution is ensured by application of convolution to a part of in
 ### Brief summary
 The paper proposes a structured way of composing group convolution such that full channel receptive field
 in a given block is 100 percent. This introduces the idea of more generalized channel local convolution and
-acyclic graph called channel dependency graph that connects output channel to input channel in a 
+acyclic graph called channel dependency graph that connects output channel to input channel in a
 convolution block and measure channel receptive field of that convolution block.
 
 ### Novelty
@@ -43,5 +43,8 @@ TO BE UPDATED
 ## Contribution
 Contribution for this project is currently not acceptable.
 Notification for any open contribution will be updated here.
+
+Official implementation for clcNet in torch can be found here:
+>[LINK](https://github.com/dqzhang17/clcnet.torch)
 
 [clc_net]:res/clc_net.jpg
