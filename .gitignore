@@ -1,0 +1,7 @@
+*.log
+.ipynb_checkpoints
+.pyc
+.idea
+.h5
+.json
+
