@@ -25,6 +25,7 @@ network.
   channels by factor of multiplier at each layer. **(Internal Keras implementation did it wrong, which
   they called depth-multiplier)**
 
+[Paper link](https://arxiv.org/pdf/1704.04861.pdf)
 
 ## Benchmarks
 
