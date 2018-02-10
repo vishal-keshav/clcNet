@@ -19,9 +19,10 @@ of point-wise group convolution with channel shuffling.
   group convolution)
 
 ![shufflenet][shufflenet]
-[shufflenet]: ../../res/shufflenet.jpg
 
 [Paper Link](https://arxiv.org/pdf/1707.01083.pdf)
 
 ## Benchmarks
 To be updated
+
+[shufflenet]: ../../res/shufflenet.jpg

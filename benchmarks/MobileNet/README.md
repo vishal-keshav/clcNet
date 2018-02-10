@@ -25,7 +25,6 @@ network.
   channels by factor of multiplier at each layer.
 
 ![mobilenet][mobilenet]
-[mobilenet]: ../../res/mobilenet.jpg
 
 >Keras implementation of resolution multiplier (translated as depth multiplier) seems to have a different interpretation.
 > Follow this [link](https://stats.stackexchange.com/questions/327410/keras-implementation-of-resolution-multiplier-or-depth-multiplier-in-mobilenet) for more information.
@@ -35,3 +34,5 @@ network.
 ## Benchmarks
 
 To be updated soon.
+
+[mobilenet]: ../../res/mobilenet.jpg
