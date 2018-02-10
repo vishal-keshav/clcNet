@@ -22,8 +22,10 @@ network.
   each layer. For example, *0.5* width multiplier reduces each input and output channel to Depth
   wise separable convolution (except convolution to input) to half.
   - Resolution multiplier - This has an effect of reducing the height and width dimension of each
-  channels by factor of multiplier at each layer. **(Internal Keras implementation did it wrong, which
-  they called depth-multiplier)**
+  channels by factor of multiplier at each layer.
+
+>Keras implementation of resolution multiplier (translated as depth multiplier) seems to have a different interpretation.
+> Follow this [link](https://stats.stackexchange.com/questions/327410/keras-implementation-of-resolution-multiplier-or-depth-multiplier-in-mobilenet) for more information.
 
 [Paper link](https://arxiv.org/pdf/1704.04861.pdf)
 
