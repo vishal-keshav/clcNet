@@ -18,6 +18,9 @@ of point-wise group convolution with channel shuffling.
   while only batch normalization is applied on other blocks (depth wise and point-wise
   group convolution)
 
+![shufflenet][shufflenet]
+[shufflenet]: ../../res/shufflenet.jpg
+
 [Paper Link](https://arxiv.org/pdf/1707.01083.pdf)
 
 ## Benchmarks
