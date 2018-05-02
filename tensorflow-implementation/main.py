@@ -26,7 +26,7 @@ def main():
     dp = d.data_provider(c)
 
     with tf.name_scope("mse_loss"):
-        loss = tf.reduce_mean(tf.losses.mean_squared_error(labels = y, predictions = out)) + l2_loss
+        loss = tf.reduce_mean(tf.losses.mean_squared_error(labels = y, predictions = out))
     tf.summary.scalar('mse_loss', loss)
 
 
@@ -47,7 +47,7 @@ def main():
             for step in range(0, c.nr_step):
                 batch = dp.get_batch()
                 _, step_loss = sess.run([train_op,loss], feed_dict = {x: batch.x, y:batch.y})
-                summary = sess.run(merged_summary, feed_dict = {x: feed_x, y:feed_y, keep_prob: 1.0})
+                summary = sess.run(merged_summary, feed_dict = {x: feed_x, y:feed_y})
                 writer.add_summary(summary, epoch*batch_size+step)
                 print('Epoch= %d, step= %d,loss= %.4f' % (epoch, step, step_loss))
 
