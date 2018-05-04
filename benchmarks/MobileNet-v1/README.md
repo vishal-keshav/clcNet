@@ -1,4 +1,4 @@
-# MobileNet Documented
+# MobileNet-v1 Documented
 
 * MobileNet is a family of architecture with faster inference on embedded systems
 such as mobile devices for computer vision task.
