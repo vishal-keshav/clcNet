@@ -70,11 +70,13 @@ class MobileNetTest(tf.test.TestCase):
     batch_size = 1
     height, width = 224, 224
     with self.test_session() as sess:
-      inputs = tf.random_uniform((batch_size, height, width, 3))
-      logits, _ = mobilenet.mobilenet(inputs)
+      random_input = tf.random_uniform(shape = (batch_size, height, width, 3))
+      new_input = tf.placeholder(dtype = tf.float32, shape = [batch_size, height, width, 3], name = 'input_holder')
+      logits, predictions = mobilenet.mobilenet(new_input)
       sess.run(tf.global_variables_initializer())
       writer = tf.summary.FileWriter('./graphs', sess.graph)
-      output = sess.run(logits)
+      val = sess.run(random_input)
+      output = sess.run(logits, feed_dict = {new_input: val})
       self.assertTrue(output.any())
       saver = tf.train.Saver()
       save_path = saver.save(sess, "./graphs/model.ckpt")
@@ -85,6 +87,8 @@ class MobileNetTest(tf.test.TestCase):
       tensor_list = np.array([ops.values() for ops in ops_list])
       for t in tensor_list:
           print(t)
+      tf.saved_model.simple_save(sess, './saved',
+          inputs={"model_input": new_input}, outputs ={"model_output": predictions})
     writer.close()
 
 if __name__ == '__main__':

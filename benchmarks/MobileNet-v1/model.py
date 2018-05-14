@@ -88,7 +88,7 @@ def mobilenet(inputs,
     end_points['Logits'] = logits
     end_points['Predictions'] = predictions
 
-  return logits, end_points
+  return logits, predictions
 
 mobilenet.default_image_size = 224
 
