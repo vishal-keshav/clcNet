@@ -18,6 +18,7 @@ from __future__ import division
 from __future__ import print_function
 
 import tensorflow as tf
+import numpy as np
 
 import model as mobilenet
 
@@ -80,6 +81,10 @@ class MobileNetTest(tf.test.TestCase):
       print(save_path)
       #tf.train.write_graph(sess.graph_def, '.','model.pbtxt')
       print("Writing complete...")
+      ops_list = sess.graph.get_operations()
+      tensor_list = np.array([ops.values() for ops in ops_list])
+      for t in tensor_list:
+          print(t)
     writer.close()
 
 if __name__ == '__main__':

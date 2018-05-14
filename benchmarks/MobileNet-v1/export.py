@@ -1,15 +1,14 @@
 import tensorflow as tf
 
 meta_path = './graphs/model.ckpt.meta'
-checkpoint_path = 'model.ckpt'
-output_node_name = ['Predictions:0']
+output_node_names = ['MobileNet/Predictions/Reshape_1']
 
 def main():
     with tf.Session() as sess:
         # Restore the graph
         saver = tf.train.import_meta_graph(meta_path)
         # Load weights
-        saver.restore(sess, tf.train.latest_checkpoint(checkpoint_path))
+        saver.restore(sess, tf.train.latest_checkpoint('./graphs'))
         # Freeze the graph
         frozen_graph_def = tf.graph_util.convert_variables_to_constants(
             sess,
