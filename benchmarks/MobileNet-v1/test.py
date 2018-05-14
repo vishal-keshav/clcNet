@@ -75,6 +75,11 @@ class MobileNetTest(tf.test.TestCase):
       writer = tf.summary.FileWriter('./graphs', sess.graph)
       output = sess.run(logits)
       self.assertTrue(output.any())
+      saver = tf.train.Saver()
+      save_path = saver.save(sess, "./graphs/model.ckpt")
+      print(save_path)
+      #tf.train.write_graph(sess.graph_def, '.','model.pbtxt')
+      print("Writing complete...")
     writer.close()
 
 if __name__ == '__main__':
