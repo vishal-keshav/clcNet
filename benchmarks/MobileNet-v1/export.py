@@ -19,17 +19,5 @@ def main():
         with open('model_frozen.pb', 'wb') as f:
           f.write(frozen_graph_def.SerializeToString())
 
-
-"""def optimize_graph():
-        input_graph_def = tf.GraphDef()
-    with tf.gfile.Open("frozen_model_1.pb", "r") as f:
-        input_graph_def.ParseFromString(f.read())
-
-    output_graph_def = optimize_for_inference_lib.optimize_for_inference( input_graph_def, [input_name],
-                                                                         [output_name], tf.float32.as_datatype_enum)
-
-    with tf.gfile.FastGFile("optimized_model_1.pb", "w") as f:
-        f.write(output_graph_def.SerializeToString())"""
-
 if __name__ == '__main__':
     main()

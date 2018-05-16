@@ -1,2 +1,0 @@
-bazel run --config=opt tensorflow/contrib/lite/toco:toco -- --savedmodel_directory=/home/vishal/Github/clcNet/benchmarks/MobileNet-v1/saved/ --output_file=/home/vishal/temp.tflite
-

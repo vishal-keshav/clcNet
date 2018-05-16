@@ -39,7 +39,7 @@ def mobilenet(inputs,
     depthwise_conv = slim.separable_convolution2d(inputs,
                                                   num_outputs=None,
                                                   stride=_stride,
-                                                  depth_multiplier=2,
+                                                  depth_multiplier=1,
                                                   kernel_size=[3, 3],
                                                   scope=sc+'/depthwise_conv')
 
